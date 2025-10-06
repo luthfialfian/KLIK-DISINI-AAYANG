@@ -1,0 +1,153 @@
+/* ===== Animasi tambahan: masuk lembut, teks keren, efek hidup ===== */
+
+/* Fade-in global untuk semua elemen saat pertama muncul */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s ease forwards;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Efek bounce lembut */
+  .bounce-soft {
+    animation: bounceSoft 3s ease-in-out infinite;
+  }
+  @keyframes bounceSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  
+  /* Efek zoom masuk pada teks */
+  .zoom-in {
+    opacity: 0;
+    animation: zoomIn 1.3s ease forwards;
+  }
+  @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  /* Efek sparkle lembut pada teks romantis */
+  .sparkle {
+    position: relative;
+    display: inline-block;
+    color: #d81b60;
+    text-shadow: 0 0 5px rgba(255,182,193,0.8), 0 0 15px rgba(255,105,180,0.6);
+    animation: sparkleText 3s ease-in-out infinite alternate;
+  }
+  @keyframes sparkleText {
+    0% { text-shadow: 0 0 6px rgba(255,182,193,0.6); }
+    100% { text-shadow: 0 0 20px rgba(255,182,193,1); }
+  }
+  
+  /* Efek muncul bergantian di galeri */
+  .gallery .card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: cardAppear 1.5s ease forwards;
+  }
+  .gallery .card:nth-child(1) { animation-delay: 0.3s; }
+  .gallery .card:nth-child(2) { animation-delay: 0.6s; }
+  .gallery .card:nth-child(3) { animation-delay: 0.9s; }
+  .gallery .card:nth-child(4) { animation-delay: 1.2s; }
+  
+  @keyframes cardAppear {
+    from { opacity: 0; transform: translateY(40px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  
+  /* Efek muncul berurutan di tulisan pesan */
+  .message {
+    animation: fadeText 3s ease forwards;
+  }
+  @keyframes fadeText {
+    0% { opacity: 0; transform: translateY(30px); }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Animasi lembut untuk tombol */
+  .btn, .music-btn, #toTop {
+    transition: all 0.4s ease;
+  }
+  .btn:hover, .music-btn:hover, #toTop:hover {
+    transform: scale(1.05) translateY(-3px);
+  }
+  
+  /* Efek sparkle lembut di latar tombol */
+  .btn::after, .music-btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 50%);
+    opacity: 0;
+    border-radius: inherit;
+    transition: opacity 0.6s ease;
+  }
+  .btn:hover::after, .music-btn:hover::after {
+    opacity: 1;
+  }
+  
+  /* Efek romantis di landing page */
+  .landing-title {
+    animation: textSlideIn 2s ease forwards;
+    opacity: 0;
+  }
+  @keyframes textSlideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .landing-sub {
+    animation: textSlideIn 2s ease 0.5s forwards;
+    opacity: 0;
+  }
+  
+  .landing-photo-frame {
+    animation: fadeInPhoto 2.5s ease 1s forwards;
+    opacity: 0;
+  }
+  @keyframes fadeInPhoto {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  
+  /* Animasi saat landing hilang */
+  .landing.hide {
+    animation: fadeOutSoft 1s ease forwards;
+  }
+  @keyframes fadeOutSoft {
+    from { opacity: 1; }
+    to { opacity: 0; transform: scale(1.05); }
+  }
+  
+  /* Efek romantis tambahan */
+  h1, h2, header {
+    animation: textGlow 4s ease-in-out infinite alternate;
+  }
+  @keyframes textGlow {
+    0% { text-shadow: 0 0 8px rgba(255,192,203,0.4); }
+    100% { text-shadow: 0 0 20px rgba(255,182,193,0.9); }
+  }
+  
+  /* Efek muncul lembut dari bawah saat scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Scroll animation trigger */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+  }
+  

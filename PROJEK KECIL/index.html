@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💞 Selamat Ulang Tahun 💞</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- ====== CSS FILES ====== -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="enhance.css" />
+  <link rel="stylesheet" href="enhance2.css" />
+  <link rel="stylesheet" href="enhance3.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>💞 Perjalanan Yang sangat Indah 💞</header>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <div class="card">
+      <img src="FOTO1.jpg" alt="Foto 1">
+      <div class="caption">Kue bisa manis,
+        Tapi senyummu manisnya kebangetan.
+        Selamat ulang tahun, semoga makin sayang aku 🌸</div>
+    </div>
+    <div class="card">
+      <img src="FOTO2.jpg" alt="Foto 2">
+      <div class="caption">Usiamu bertambah, dan cintaku pun begitu.
+        Setiap harimu adalah hadiah buatku,
+        tapi hari ini adalah hadiah buat dunia:
+        karena kamu lahir. 💕</div>
+    </div>
+    <div class="card">
+      <img src="FOTO3.jpg" alt="Foto 3">
+      <div class="caption">Selamat ulang tahun buat kamu yang udah bikin aku percaya
+        kalau jatuh cinta tuh seseru itu.
+        Stay humble, stay cute, and stay mine ✨</div>
+    </div>
+    <div class="card">
+      <img src="FOTO4.jpg " alt="Foto 4">
+      <div class="caption">Happy birthday, cintaku~
+        Semoga hidupmu seindah filter IG,
+        dan hubungan kita gak pernah nge-lag kayak sinyal pas Zoom-an 💫</div>
+    </div>
+  </section>
+
+  <!-- Message Section -->
+  <div class="message" id="messageSection">
+    Selamat ulang tahun, my favorite person!
+    Semoga di usia yang baru, cintamu ke aku tambah unlimited,
+    nggak bisa expired, dan makin lengket kayak stiker!  
+    <br><br>
+    <strong>Selamat ulang tahun Oktavia WulanNdari 💖</strong>
+  </div>
+
+  <!-- Footer -->
+  <footer>© 2025 – Forever & Always 💞</footer>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+  </audio>
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <!-- Scroll to Top Button -->
+  <button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
+
+  <!-- Landing Page -->
+  <div id="landing" class="landing">
+    <div class="landing-card">
+      <h1 class="landing-title">Selamat Ulang Tahun, Sayang 💖</h1>
+      <p class="landing-sub">Untukmu sayangku Cintaku Cantiknya atuu</p>
+
+      <!-- Foto 3x4 -->
+      <div class="landing-photo">
+        <div class="landing-photo-frame">
+          <img src="HALAMAN 1.jpg" alt="Foto myqueen">
+        </div>
+      </div>
+
+      <div class="landing-actions">
+        <button id="enterBtn" class="btn primary">Masuk</button>
+        <button id="skipBtn" class="btn ghost">Lihat Langsung</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layers for Sakura, Balloons & Particles -->
+  <div id="sakuraLayer" class="sakura-layer"></div>
+  <div id="balloonLayer" class="balloon-layer"></div>
+  <canvas id="particles" class="particles-canvas"></canvas>
+
+  <!-- ====== SCRIPT FILES ====== -->
+  <script src="script.js"></script>
+  <script src="enhance.js"></script>
+  <script src="enhance2.js"></script>
+
+</body>
+</html>

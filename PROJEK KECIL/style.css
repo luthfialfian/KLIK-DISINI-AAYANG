@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Dancing Script', cursive;
+  background: linear-gradient(180deg, #ffd6f5 0%, #ffe0ec 100%);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: background 1s ease-in-out;
+}
+
+/* Header */
+header {
+  padding: 50px 20px 20px;
+  font-size: 3em;
+  text-align: center;
+  color: #d81b60;
+  text-shadow: 0 0 10px rgba(255,105,180,0.6);
+  animation: headerFloat 6s ease-in-out infinite alternate;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f48fb1, #d81b60);
+  animation: underlineGlow 3s ease-in-out infinite;
+}
+
+@keyframes underlineGlow {
+  0%, 100% { opacity: 0.3; transform: translateX(-50%) scaleX(0.9); }
+  50% { opacity: 1; transform: translateX(-50%) scaleX(1.1); }
+}
+
+@keyframes headerFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.8s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(240,128,170,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 4s ease, filter 0.5s ease;
+  filter: brightness(0.95);
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.caption {
+  padding: 18px;
+  font-size: 1.3em;
+  color: #8e24aa;
+  border-top: 2px solid #f48fb1;
+  background: linear-gradient(to top, #fff0f6, #fff);
+  text-shadow: 0 1px 2px rgba(255,255,255,0.5);
+}
+
+/* Message */
+.message {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 35px;
+  font-size: 1.5em;
+  line-height: 1.8em;
+  text-align: center;
+  background: rgba(255,255,255,0.7);
+  border-radius: 25px;
+  color: #6a1b9a;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 3s ease forwards, pulseSoft 8s ease-in-out infinite;
+  opacity: 0;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { box-shadow: 0 0 10px rgba(255,192,203,0.4); }
+  50% { box-shadow: 0 0 25px rgba(255,182,193,0.7); }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1em;
+  color: #9c27b0;
+  background: rgba(255,255,255,0.6);
+  letter-spacing: 0.3px;
+}
+
+/* Buttons */
+.music-btn,
+#toTop {
+  position: fixed;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-btn {
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #f48fb1, #d81b60);
+  color: white;
+  width: 55px;
+  height: 55px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,192,203,0.6);
+}
+
+#toTop {
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #ba68c8, #8e24aa);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 25px;
+  display: none;
+  font-size: 1em;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#toTop:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255,182,193,0.6);
+}
+
+/* Landing Page */
+.landing {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffe6f0, #fff0f6);
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+}
+
+.landing-card {
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(255,105,180,0.3);
+  animation: fadeInSoft 1.8s ease;
+  position: relative;
+}
+
+.landing-card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255,105,180,0.3), rgba(255,255,255,0.3));
+  z-index: -1;
+}
+
+.landing-title {
+  color: #d81b60;
+  font-size: 2.6em;
+  margin-bottom: 10px;
+  text-shadow: 0 3px 8px rgba(255,182,193,0.4);
+}
+
+.landing-sub {
+  color: #8e24aa;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+/* Foto 3x4 di bawah tulisan */
+.landing-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px 0 25px;
+}
+
+.landing-photo-frame {
+  width: 210px;
+  height: 280px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #ffd6f5 0%, #fff0f6 100%);
+  box-shadow: 0 8px 25px rgba(255,182,193,0.4);
+  overflow: hidden;
+  animation: floatSoft 6s ease-in-out infinite;
+  transition: transform 0.6s ease;
+}
+
+.landing-photo-frame:hover {
+  transform: scale(1.05) rotate(1deg);
+}
+
+.landing-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 3s ease;
+}
+
+.landing-photo-frame:hover img {
+  transform: scale(1.07);
+}
+
+@keyframes fadeInSoft {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Sakura petals layer */
+.sakura-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Balloons */
+.balloon-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 900;
+}
+
+/* Particles canvas */
+.particles-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    font-size: 2em;
+  }
+  .landing-title {
+    font-size: 2em;
+  }
+  .message {
+    font-size: 1.2em;
+  }
+  .card img {
+    height: 220px;
+  }
+}

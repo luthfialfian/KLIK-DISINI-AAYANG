@@ -1,0 +1,126 @@
+/* Efek tambahan romantis & lembut */
+body {
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Efek glowing lembut di seluruh teks utama */
+  h1, h2, h3, header, footer, .message strong {
+    text-shadow: 0 0 12px rgba(255,192,203,0.7), 0 0 25px rgba(255,182,193,0.5);
+    animation: glowSoft 4s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glowSoft {
+    0% { text-shadow: 0 0 8px rgba(255,182,193,0.4); }
+    100% { text-shadow: 0 0 20px rgba(255,192,203,0.8); }
+  }
+  
+  /* Efek cahaya bergerak di header */
+  header {
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%);
+    animation: shimmer 6s infinite linear;
+  }
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  /* Efek floating lembut di foto galeri */
+  .card img {
+    animation: floatImg 8s ease-in-out infinite;
+  }
+  @keyframes floatImg {
+    0%, 100% { transform: scale(1) translateY(0); }
+    50% { transform: scale(1.02) translateY(-6px); }
+  }
+  
+  /* Cahaya lembut di setiap card */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top center, rgba(255,192,203,0.2), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  /* Efek lembut untuk landing page */
+  .landing {
+    background: linear-gradient(135deg, #ffeaf3, #fff3f8);
+    animation: bgPulse 6s ease-in-out infinite alternate;
+  }
+  
+  @keyframes bgPulse {
+    0% { background: linear-gradient(135deg, #ffeaf3, #fff3f8); }
+    100% { background: linear-gradient(135deg, #fff3f8, #ffe0ef); }
+  }
+  
+  /* Tombol landing page */
+  .btn {
+    font-family: 'Dancing Script', cursive;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+  }
+  
+  .btn.primary {
+    background: linear-gradient(135deg, #f48fb1, #ec407a);
+    color: #fff;
+    box-shadow: 0 5px 20px rgba(236,64,122,0.4);
+  }
+  .btn.primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(236,64,122,0.6);
+  }
+  
+  .btn.ghost {
+    background: transparent;
+    color: #ec407a;
+    border: 2px solid #ec407a;
+  }
+  .btn.ghost:hover {
+    background: #ec407a;
+    color: #fff;
+  }
+  
+  /* Efek sparkle lembut di sekitar foto */
+  .landing-photo-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), transparent 40%);
+    border-radius: 18px;
+    mix-blend-mode: screen;
+    animation: sparkleMove 6s linear infinite;
+  }
+  
+  @keyframes sparkleMove {
+    0% { background-position: 0 0; opacity: 0.7; }
+    50% { background-position: 50% 50%; opacity: 1; }
+    100% { background-position: 100% 100%; opacity: 0.7; }
+  }
+  
+  /* Efek halus di footer */
+  footer {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(5px);
+    border-top: 2px solid rgba(255,182,193,0.3);
+    box-shadow: 0 -4px 10px rgba(255,182,193,0.2);
+  }
+  
